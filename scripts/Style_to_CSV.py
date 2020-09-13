@@ -2,7 +2,7 @@ import csv
 layer = iface.activeLayer()
 renderer  = layer.renderer()
 
-with open('/Users/florianboret/out_semicolon.csv', 'w', newline='', encoding='utf-8') as myfile:
+with open('/out_semicolon.csv', 'w', newline='', encoding='utf-8') as myfile:
     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL,delimiter=';')
     wr.writerow(['Value','Label','Hexa','RGBA','R','G','B','A'])
     if renderer.type() == 'categorizedSymbol': #Style categorise
@@ -18,7 +18,7 @@ with open('/Users/florianboret/out_semicolon.csv', 'w', newline='', encoding='ut
             list.append(str(category.symbol().color().green())) # Couleur green
             list.append(str(category.symbol().color().blue())) # Couleur blue
             list.append(str(category.symbol().color().alpha())) # Alpha
-            #print (list)            
+            #print (list)
             wr.writerow(list)
     #==============================================================================
     elif renderer.type() == 'singleSymbol': #Style unique
