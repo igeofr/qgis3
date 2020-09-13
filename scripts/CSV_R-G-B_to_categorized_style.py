@@ -1,7 +1,7 @@
 import csv
 
 #Variables
-CSV_file="/Users/florianboret/out_semicolon.csv"
+CSV_file="/in_semicolon.csv"
 
 Value_field='NIV4_18'
 
