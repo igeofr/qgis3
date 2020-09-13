@@ -27,7 +27,7 @@ with open('/Users/florianboret/out_semicolon.csv', 'w', newline='', encoding='ut
         list.append('singleSymbol') # Valeur
         list.append('singleSymbol') # Label
         list.append(str(renderer.symbol().color().name())) # Couleur hexadecimale
-        list.append(str(category.symbol().color().red())+','+str(category.symbol().color().green())+','+str(category.symbol().color().blue()) +','+str(category.symbol().color().alpha())) # Couleur rgba
+        list.append(str(renderer.symbol().color().red())+','+str(renderer.symbol().color().green())+','+str(renderer.symbol().color().blue()) +','+str(renderer.symbol().color().alpha())) # Couleur rgba
         list.append(str(renderer.symbol().color().red())) # Couleur red
         list.append(str(renderer.symbol().color().green())) # Couleur green
         list.append(str(renderer.symbol().color().blue())) # Couleur blue
@@ -44,7 +44,7 @@ with open('/Users/florianboret/out_semicolon.csv', 'w', newline='', encoding='ut
             list.append(str(rng.lowerValue())+"-"+str(rng.upperValue())) # Valeur
             list.append(rng.label()) # Label
             list.append(str(rng.symbol().color().name())) # Couleur hexadecimale
-            list.append(str(category.symbol().color().red())+','+str(category.symbol().color().green())+','+str(category.symbol().color().blue()) +','+str(category.symbol().color().alpha())) # Couleur rgba
+            list.append(str(rng.symbol().color().red())+','+str(rng.symbol().color().green())+','+str(rng.symbol().color().blue()) +','+str(rng.symbol().color().alpha())) # Couleur rgba
             list.append(str(rng.symbol().color().red())) # Couleur red
             list.append(str(rng.symbol().color().green())) # Couleur green
             list.append(str(rng.symbol().color().blue())) # Couleur blue
@@ -61,7 +61,7 @@ with open('/Users/florianboret/out_semicolon.csv', 'w', newline='', encoding='ut
             list.append(rule.filterExpression ()) # Valeur
             list.append(rule.label()) # Label
             list.append(str(rule.symbol().color().name())) # Couleur hexadecimale
-            list.append(str(category.symbol().color().red())+','+str(category.symbol().color().green())+','+str(category.symbol().color().blue()) +','+str(category.symbol().color().alpha())) # Couleur rgba
+            list.append(str(rule.symbol().color().red())+','+str(rule.symbol().color().green())+','+str(rule.symbol().color().blue()) +','+str(rule.symbol().color().alpha())) # Couleur rgba
             list.append(str(rule.symbol().color().red())) # Couleur red
             list.append(str(rule.symbol().color().green())) # Couleur green
             list.append(str(rule.symbol().color().blue())) # Couleur blue
