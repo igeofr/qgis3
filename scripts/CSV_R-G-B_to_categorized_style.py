@@ -1,15 +1,22 @@
+import csv
+
 #Variables
-CSV_file="/CSV_semicolon.csv"
+CSV_file="/Users/florianboret/out_semicolon.csv"
 
 Value_field='NIV4_18'
 
 Column_value=0
 Column_label=1
-Column_rgb=2
+Column_red=4
+Column_green=5
+Column_blue=6
 
-Stroke_Color='255,255,255'
+Stroke_Color_red=0
+Stroke_Color_green=0
+Stroke_Color_blue=0
+
 Outline=True
-Outline_width=0.1
+Outline_width=1
 Transparency=1
 
 Save_layer_style_as_default=False
@@ -23,8 +30,9 @@ for row in reader:
     #print (row[0])
     tab = []
     for row in reader:
+        #print(color_rgb)
         # Permet de definir les colonnes value, label, rgb
-        col_select =row[Column_value], row[Column_label],row[Column_rgb]
+        col_select =row[Column_value], row[Column_label],row[Column_red],row[Column_green],row[Column_blue]
         # Insere chaque ligne du CSV dans le tableau
         tab.append(col_select)
         
@@ -34,8 +42,8 @@ for row in reader:
 
     #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         categories = []
-        for value, label, color in Lt :
-            tab_list = value +' - '+label+' - '+color
+        for value, label, color_red, color_green, color_blue in Lt :
+            #tab_list = value +' - '+label+' - '+color_red +' - '+ color_green +' - '+ color_blue
             
             # Creation de la ligne
             if Outline == False :
@@ -50,11 +58,11 @@ for row in reader:
             if layer.geometryType() == QgsWkbTypes.PolygonGeometry:
                 symbol = QgsSymbol.defaultSymbol(layer.geometryType())
                 # Set colour
-                symbol.setColor(QColor(color))
+                symbol.setColor(QColor(int(color_red),int(color_green),int(color_blue)))
                 # Set opacity
                 symbol.setOpacity(Transparency)
                 # Set Stroke
-                symbol.symbolLayer(0).setStrokeColor(QColor(Stroke_Color))
+                symbol.symbolLayer(0).setStrokeColor(QColor(int(Stroke_Color_red),int(Stroke_Color_green),int(Stroke_Color_blue)))
                 symbol.symbolLayer(0).setStrokeWidth(Outline_width)
                     
                 category = QgsRendererCategory(value, symbol, label)
@@ -64,7 +72,7 @@ for row in reader:
             if layer.geometryType() == QgsWkbTypes.LineGeometry:
                 symbol = QgsSymbol.defaultSymbol(layer.geometryType())
                 # Set colour
-                symbol.setColor(QColor(color))
+                symbol.setColor(QColor.fromRgb(int(color_red),int(color_green),int(color_blue)))
                 # Set opacity
                 symbol.setOpacity(Transparency)
                 symbol.setWidth (Outline_width)
@@ -76,11 +84,11 @@ for row in reader:
             if layer.geometryType() == QgsWkbTypes.PointGeometry:
                 symbol = QgsSymbol.defaultSymbol(layer.geometryType())
                 # Set colour
-                symbol.setColor(QColor(color))
+                symbol.setColor(QColor.fromRgb(int(color_red),int(color_green),int(color_blue)))
                 # Set opacity
                 symbol.setOpacity(Transparency)
                 # Set Stroke
-                symbol.symbolLayer(0).setStrokeColor(QColor(Stroke_Color))
+                symbol.symbolLayer(0).setStrokeColor(QColor(int(Stroke_Color_red),int(Stroke_Color_green),int(Stroke_Color_blue)))
                 symbol.symbolLayer(0).setStrokeWidth(Outline_width)
                     
                 category = QgsRendererCategory(value, symbol, label)
