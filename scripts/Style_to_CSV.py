@@ -42,8 +42,8 @@ with open('/Users/florianboret/out_semicolon.csv', 'w', newline='', encoding='ut
         for rng in ranges: # Recuperation des infos et ecriture dans le csv
             list =[]
             list.append(str(rng.lowerValue())+"-"+str(rng.upperValue())) # Valeur
-            list.append(rng.label().encode('utf-8')) # Label
-            list.append(str(rng.symbol().color().name()).encode('utf-8')) # Couleur hexadecimale
+            list.append(rng.label()) # Label
+            list.append(str(rng.symbol().color().name())) # Couleur hexadecimale
             list.append(str(category.symbol().color().red())+','+str(category.symbol().color().green())+','+str(category.symbol().color().blue()) +','+str(category.symbol().color().alpha())) # Couleur rgba
             list.append(str(rng.symbol().color().red())) # Couleur red
             list.append(str(rng.symbol().color().green())) # Couleur green
@@ -58,14 +58,14 @@ with open('/Users/florianboret/out_semicolon.csv', 'w', newline='', encoding='ut
            
         for rule in root_rule: # Recuperation des infos et ecriture dans le csv
             list =[]
-            list.append(rule.filterExpression ().encode('utf-8')) # Valeur
-            list.append(rule.label().encode('utf-8')) # Label
+            list.append(rule.filterExpression ()) # Valeur
+            list.append(rule.label()) # Label
             list.append(str(rule.symbol().color().name())) # Couleur hexadecimale
             list.append(str(category.symbol().color().red())+','+str(category.symbol().color().green())+','+str(category.symbol().color().blue()) +','+str(category.symbol().color().alpha())) # Couleur rgba
             list.append(str(rule.symbol().color().red())) # Couleur red
             list.append(str(rule.symbol().color().green())) # Couleur green
             list.append(str(rule.symbol().color().blue())) # Couleur blue
-            list.append(str(rule.symbol().color().alpha()).encode('utf-8')) # Alpha
+            list.append(str(rule.symbol().color().alpha())) # Alpha
             wr.writerow(list) # On ecrit le tout
                   
     #==============================================================================
