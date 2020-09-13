@@ -68,7 +68,6 @@ for row in reader:
                 # Set opacity
                 symbol.setOpacity(Transparency)
                 symbol.setWidth (Outline_width)
-                
                     
                 category = QgsRendererCategory(value, symbol, label)
                 categories.append(category)
