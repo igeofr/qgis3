@@ -49,13 +49,7 @@ for row in reader:
         categories = []
         for value, label, color_red, color_green, color_blue in Lt :
             #tab_list = value +' - '+ label +' - ' +color_red +' - '+ color_green +' - '+ color_blue
-            
-            # Creation de la ligne
-            if Outline == False :
-               b_outline = 'no'
-            else :
-                b_outline = 'yes'
-           
+                       
             # Largeur de la ligne
             v_width = str(Outline_width)
 
@@ -67,6 +61,8 @@ for row in reader:
                 # Set opacity
                 symbol.setOpacity(Transparency)
                 # Set Stroke
+                if Outline == False :
+                            symbol.symbolLayer(0).setStrokeStyle(Qt.PenStyle(Qt.NoPen))
                 symbol.symbolLayer(0).setStrokeColor(QColor(int(Stroke_Color_red),int(Stroke_Color_green),int(Stroke_Color_blue)))
                 symbol.symbolLayer(0).setStrokeWidth(Outline_width)
                     
@@ -93,6 +89,8 @@ for row in reader:
                 # Set opacity
                 symbol.setOpacity(Transparency)
                 # Set Stroke
+                if Outline == False :
+                            symbol.symbolLayer(0).setStrokeStyle(Qt.PenStyle(Qt.NoPen))
                 symbol.symbolLayer(0).setStrokeColor(QColor(int(Stroke_Color_red),int(Stroke_Color_green),int(Stroke_Color_blue)))
                 symbol.symbolLayer(0).setStrokeWidth(Outline_width)
                     
