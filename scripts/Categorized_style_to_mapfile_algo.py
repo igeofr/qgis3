@@ -18,7 +18,10 @@ from qgis.core import (QgsProcessing,
                        QgsProcessingAlgorithm,
                        QgsProcessingParameterVectorLayer,
                        QgsProcessingParameterFileDestination,
-                       QgsProcessingParameterBoolean)
+                       QgsProcessingParameterBoolean,
+                       QgsWkbTypes,
+                       QgsProcessingParameterField,
+                       QgsMarkerSymbol)
 from qgis import processing
 
 
@@ -28,7 +31,9 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
     # calling from the QGIS console.
 
     INPUT = 'INPUT'
+    VALUE_FIELD = 'VALUE_FIELD'
     BOOLEAN1 = 'BOOLEAN1'
+    BOOLEAN2 = 'BOOLEAN2'
     OUTPUT = 'OUTPUT'
 
     def tr(self, string):
@@ -72,7 +77,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
         contain lowercase alphanumeric characters only and no spaces or other
         formatting characters.
         """
-        return 'categorizedstyletomapfile'
+        return 'mapfile'
 
     def shortHelpString(self):
         """
@@ -95,6 +100,14 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
             )
         )
         self.addParameter(
+            QgsProcessingParameterField(
+                self.VALUE_FIELD,
+                'Champ',
+                '',
+                self.INPUT
+                )
+        )
+        self.addParameter(
             QgsProcessingParameterBoolean(
                 self.BOOLEAN1,
                 self.tr('Interrogation WMS'),
@@ -102,47 +115,123 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
             )
         )
         self.addParameter(
+            QgsProcessingParameterBoolean(
+                self.BOOLEAN2,
+                self.tr('Contour (Uniquement pour les polygones et les points)'),
+                defaultValue=False
+            )
+        )
+        self.addParameter(
             QgsProcessingParameterFileDestination(
                 self.OUTPUT,
                 self.tr('Output layer'),
-                'TXT files (*.txt)'
+                'TXT files (*.txt)',
+                defaultValue='/Users/florianboret/toto.txt'
             )
         )
 
-    def processAlgorithm(self, parameters, context, feedback):
+    def processAlgorithm(self, parameters, context,  feedback):
         """
         Here is where the processing itself takes place.
         """
         source = self.parameterAsVectorLayer(parameters, self.INPUT, context)
+        value_field = self.parameterAsString(parameters,  self.VALUE_FIELD, context)
         txt_file = self.parameterAsFileOutput(parameters, self.OUTPUT, context)
         boolean_value = self.parameterAsBool(parameters, self.BOOLEAN1, context)
+        boolean_value2 = self.parameterAsBool(parameters, self.BOOLEAN2, context)
 
         renderer  = source.renderer()
 
         # Open a file with access mode 'w'
         file_object = open(txt_file, 'w')
 
-
+        #symbol.symbolLayer(0).setStrokeStyle(Qt.PenStyle(Qt.NoPen))
         if renderer.type() == 'categorizedSymbol': #Style categorise
             categories = renderer.categories()
 
-            for category in categories: # Recuperation des infos et ecriture dans le txt
-                line1 = 'CLASS'
-                line2 = '   NAME "'+(category.label())+'"'
-                if boolean_value==True :
-                    line3 = '       TEMPLATE "../template/getfeatureinfo/{LAYER_NAME}.html"'
-                else :
-                    line3 =''
-                line4 = '       EXPRESSION ("[niv3]" eq "'+category.value()+'"'
-                line5 = '       STYLE'
-                line6 = '           COLOR '+str(category.symbol().color().red())+' '+str(category.symbol().color().green())+' '+str(category.symbol().color().blue())
-                line7 = '           OUTLINECOLOR '+str(category.symbol().symbolLayer(0).strokeColor().red())+' '+str(category.symbol().symbolLayer(0).strokeColor().green())+' '+str(category.symbol().symbolLayer(0).strokeColor().blue())
-                line8 = '           WIDTH '+str(category.symbol().symbolLayer(0).strokeWidth())
-                line9 = '       END'
-                line10 = '  END'
-                # Append 'hello' at the end of file
-                file_object.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7,line8,line9,line10))
-                # Close the file
+            if source.geometryType() == QgsWkbTypes.PolygonGeometry:
+                    for category in categories: # Recuperation des infos et ecriture dans le txt
+                        if category.value()!=None  :
+                            line1 = 'CLASS'
+                            line2 = '   NAME "'+(category.label())+'"'
+                            if boolean_value==True :
+                                line3 = '       TEMPLATE "../template/getfeatureinfo/{LAYER_NAME}.html"'
+                            else :
+                                line3 = ''
+                            line4 = '       EXPRESSION ("['+str(value_field)+']" eq "'+str(category.value())+'")'
+                            line5 = '       STYLE'
+                            properties = category.symbol().symbolLayer(0).properties()
+                            if properties['style']=='solid' :
+                                line6 = ''
+                            else :
+                                line6 = '           SYMBOL "'+properties['style']+'"'
+                            line7 = '           COLOR '+str(category.symbol().color().red())+' '+str(category.symbol().color().green())+' '+str(category.symbol().color().blue())
+                            if boolean_value2==True :
+                                line8 = '           OUTLINECOLOR '+str(category.symbol().symbolLayer(0).strokeColor().red())+' '+str(category.symbol().symbolLayer(0).strokeColor().green())+' '+str(category.symbol().symbolLayer(0).strokeColor().blue())
+                                line9 = '           OUTLINEWIDTH '+str("%0.2f" % category.symbol().symbolLayer(0).strokeWidth())
+                            else :
+                                line8 = ''
+                                line9 = ''
+                            line10 = '       END'
+                            line11 = '  END'
+                            # Append 'hello' at the end of file
+                            file_object.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7,line8,line9,line10,line11))
+                            # Close the file
+            elif source.geometryType() == QgsWkbTypes.LineGeometry:
+                    for category in categories: # Recuperation des infos et ecriture dans le txt
+                        if category.value()!=None  :
+                            line1 = 'CLASS'
+                            line2 = '   NAME "'+(category.label())+'"'
+                            if boolean_value==True :
+                                line3 = '       TEMPLATE "../template/getfeatureinfo/{LAYER_NAME}.html"'
+                            else :
+                                line3 =''
+                            line4 = '       EXPRESSION ("['+str(value_field)+']" eq "'+str(category.value())+'")'
+                            line5 = '       STYLE'
+                            properties = category.symbol().symbolLayer(0).properties()
+                            if properties['line_style']=='solid' :
+                                line6 = ''
+                            else :
+                                line6 = '           SYMBOL "'+properties['line_style']+'"'
+                            line7 = '           COLOR '+str(category.symbol().color().red())+' '+str(category.symbol().color().green())+' '+str(category.symbol().color().blue())
+                            line8 = '           WIDTH '+str("%0.2f" % category.symbol().width())
+                            line9 = ''
+                            line10 = '       END'
+                            line11 = '  END'
+                            # Append 'hello' at the end of file
+                            file_object.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7,line8,line9,line10,line11))
+                            # Close the file
+            elif source.geometryType() == QgsWkbTypes.PointGeometry:
+                    for category in categories: # Recuperation des infos et ecriture dans le txt
+                        if category.value()!=None  :
+                            line1 = 'CLASS'
+                            line2 = '   NAME "'+(category.label())+'"'
+                            if boolean_value==True :
+                                line3 = '       TEMPLATE "../template/getfeatureinfo/{LAYER_NAME}.html"'
+                            else :
+                                line3 = ''
+                            line4 = '       EXPRESSION ("['+str(value_field)+']" eq "'+str(category.value())+'")'
+                            line5 = '       STYLE'
+                            properties = category.symbol().symbolLayer(0).properties()
+                            line6 = '           SYMBOL "'+properties['name']+'"'
+                            line7 = '           COLOR '+str(category.symbol().color().red())+' '+str(category.symbol().color().green())+' '+str(category.symbol().color().blue())
+                            line8 = '           WIDTH '+str(category.symbol().size())
+                            if boolean_value2==True :
+                                line9 = '           OUTLINECOLOR '+str(category.symbol().symbolLayer(0).strokeColor().red())+' '+str(category.symbol().symbolLayer(0).strokeColor().green())+' '+str(category.symbol().symbolLayer(0).strokeColor().blue())
+                                if category.symbol().symbolLayer(0).strokeWidth()==0 :
+                                    line10 = '           OUTLINEWIDTH 0.20'
+                                else :
+                                    line10 = '           OUTLINEWIDTH '+str("%0.2f" % category.symbol().symbolLayer(0).strokeWidth())
+                            else :
+                                line9 = ''
+                                line10 = ''
+                            line11 = '       END'
+                            line12 = '  END'
+                            # Append 'hello' at the end of file
+                            file_object.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7,line8,line9,line10,line11,line12))
+                            # Close the file
+
+                
         file_object.close()
         # Return the results of the algorithm. In this case our only result is
         # the feature sink which contains the processed features, but some
