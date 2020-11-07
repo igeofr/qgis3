@@ -126,7 +126,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                 self.OUTPUT,
                 self.tr('Output layer'),
                 'TXT files (*.txt)',
-                defaultValue='/Users/florianboret/toto.txt'
+                defaultValue=False
             )
         )
 
