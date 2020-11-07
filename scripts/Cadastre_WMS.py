@@ -104,7 +104,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
         self.addParameter(
             QgsProcessingParameterField(
                 self.INSEE_CODE,
-                'Champ',
+                'Code INSEE',
                 '',
                 self.INPUT
                 )
@@ -112,7 +112,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
         self.addParameter(
             QgsProcessingParameterField(
                 self.COMMUNE_NAME,
-                'Champ',
+                'Nom',
                 '',
                 self.INPUT
                 )
