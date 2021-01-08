@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+# =============================================================================
+# Created By : Florian Boret
+# Created Date : Septembre 2020
+# Date last modified :
+# =============================================================================
 
 """
 ***************************************************************************
@@ -101,7 +106,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
         # We add a feature sink in which to store our processed features (this
         # usually takes the form of a newly created vector layer when the
         # algorithm is run in QGIS).
-               
+
         self.addParameter(
             QgsProcessingParameterFileDestination(
                 self.OUTPUT,
@@ -120,13 +125,13 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
 
 
         renderer  = source.renderer()
-        
+
         feedback.pushInfo("Début de l'export")
 
         with open(csv_file, 'w', newline='', encoding='utf-8') as myfile:
             wr = csv.writer(myfile, quoting=csv.QUOTE_ALL,delimiter=';')
             wr.writerow(['Value','Label','Hexa','RGBA','R','G','B','A'])
-            
+
             if renderer.type() == 'categorizedSymbol': #Style categorise
                 feedback.pushInfo("Style categorise")
                 categories = renderer.categories()
@@ -156,12 +161,12 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                 list.append(str(renderer.symbol().color().blue())) # Couleur blue
                 list.append(str(renderer.symbol().color().alpha())) # Alpha
                 wr.writerow(list) # On ecrit le tout
-                    
+
             #==============================================================================
             elif renderer.type() == 'graduatedSymbol': #Style gradue
                 feedback.pushInfo("Style gradue")
                 ranges = renderer.ranges()
-                   
+
                 for rng in ranges: # Recuperation des infos et ecriture dans le csv
                     list =[]
                     list.append(str(rng.lowerValue())+"-"+str(rng.upperValue())) # Valeur
@@ -176,9 +181,9 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
 
             #==============================================================================
             elif renderer.type() == 'RuleRenderer': #Style par regle
-                feedback.pushInfo("Style par regle") 
+                feedback.pushInfo("Style par regle")
                 root_rule = renderer.rootRule().children()
-                   
+
                 for rule in root_rule: # Recuperation des infos et ecriture dans le csv
                     list =[]
                     list.append(rule.filterExpression ()) # Valeur
@@ -190,7 +195,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                     list.append(str(rule.symbol().color().blue())) # Couleur blue
                     list.append(str(rule.symbol().color().alpha())) # Alpha
                     wr.writerow(list) # On ecrit le tout
-                          
+
             #==============================================================================
             else : #Style non gere
                 list =[]
@@ -203,7 +208,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                 list.append('Style non gere') # Couleur blue
                 list.append('Style non gere')# Alpha
                 wr.writerow(list) # On ecrit le tout
-        
+
         myfile.close()
         # Return the results of the algorithm. In this case our only result is
         # the feature sink which contains the processed features, but some
