@@ -161,7 +161,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                 name=self.C_R,
                 description=self.tr('Column Red'),
                 type=QgsProcessingParameterNumber.Integer,
-                defaultValue=4
+                defaultValue=2
                 )
             )
         self.addParameter(
@@ -169,7 +169,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                 name=self.C_G,
                 description=self.tr('Column Green'),
                 type=QgsProcessingParameterNumber.Integer,
-                defaultValue=5
+                defaultValue=3
                 )
             )
         self.addParameter(
@@ -177,7 +177,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                 name=self.C_B,
                 description=self.tr('Column Blue'),
                 type=QgsProcessingParameterNumber.Integer,
-                defaultValue=6
+                defaultValue=4
                 )
             )
         self.addParameter(

@@ -159,7 +159,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                 name=self.C_RGB,
                 description=self.tr('Column RGB'),
                 type=QgsProcessingParameterNumber.Integer,
-                defaultValue=3
+                defaultValue=2
                 )
             )
         self.addParameter(
