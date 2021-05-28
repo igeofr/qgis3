@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveDateTime="2021-05-28T19:43:20" version="3.18.1-Zürich" projectname="" saveUserFull="Florian Boret" saveUser="florianboret">
+<qgis saveDateTime="2021-05-28T19:46:31" version="3.18.1-Zürich" projectname="" saveUserFull="Florian Boret" saveUser="florianboret">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -33424,7 +33424,7 @@ def my_form_open(dialog, layer, feature):
                   <Option name="joinstyle" value="round" type="QString"/>
                   <Option name="line_color" value="0,0,0,255" type="QString"/>
                   <Option name="line_style" value="solid" type="QString"/>
-                  <Option name="line_width" value="0.8" type="QString"/>
+                  <Option name="line_width" value="0.9" type="QString"/>
                   <Option name="line_width_unit" value="MM" type="QString"/>
                   <Option name="offset" value="0" type="QString"/>
                   <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
@@ -33446,7 +33446,7 @@ def my_form_open(dialog, layer, feature):
                 <prop v="round" k="joinstyle"/>
                 <prop v="0,0,0,255" k="line_color"/>
                 <prop v="solid" k="line_style"/>
-                <prop v="0.8" k="line_width"/>
+                <prop v="0.9" k="line_width"/>
                 <prop v="MM" k="line_width_unit"/>
                 <prop v="0" k="offset"/>
                 <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
@@ -33477,7 +33477,7 @@ def my_form_open(dialog, layer, feature):
                   <Option name="joinstyle" value="round" type="QString"/>
                   <Option name="line_color" value="255,255,255,255" type="QString"/>
                   <Option name="line_style" value="solid" type="QString"/>
-                  <Option name="line_width" value="0.8" type="QString"/>
+                  <Option name="line_width" value="0.7" type="QString"/>
                   <Option name="line_width_unit" value="MM" type="QString"/>
                   <Option name="offset" value="0" type="QString"/>
                   <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
@@ -33499,7 +33499,7 @@ def my_form_open(dialog, layer, feature):
                 <prop v="round" k="joinstyle"/>
                 <prop v="255,255,255,255" k="line_color"/>
                 <prop v="solid" k="line_style"/>
-                <prop v="0.8" k="line_width"/>
+                <prop v="0.7" k="line_width"/>
                 <prop v="MM" k="line_width_unit"/>
                 <prop v="0" k="offset"/>
                 <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
@@ -33601,7 +33601,7 @@ def my_form_open(dialog, layer, feature):
                   <Option name="joinstyle" value="bevel" type="QString"/>
                   <Option name="line_color" value="0,0,0,255" type="QString"/>
                   <Option name="line_style" value="dot" type="QString"/>
-                  <Option name="line_width" value="1.1" type="QString"/>
+                  <Option name="line_width" value="0.9" type="QString"/>
                   <Option name="line_width_unit" value="MM" type="QString"/>
                   <Option name="offset" value="0" type="QString"/>
                   <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
@@ -33623,7 +33623,7 @@ def my_form_open(dialog, layer, feature):
                 <prop v="bevel" k="joinstyle"/>
                 <prop v="0,0,0,255" k="line_color"/>
                 <prop v="dot" k="line_style"/>
-                <prop v="1.1" k="line_width"/>
+                <prop v="0.9" k="line_width"/>
                 <prop v="MM" k="line_width_unit"/>
                 <prop v="0" k="offset"/>
                 <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
@@ -33654,7 +33654,7 @@ def my_form_open(dialog, layer, feature):
                   <Option name="joinstyle" value="round" type="QString"/>
                   <Option name="line_color" value="255,255,255,255" type="QString"/>
                   <Option name="line_style" value="solid" type="QString"/>
-                  <Option name="line_width" value="0.86" type="QString"/>
+                  <Option name="line_width" value="0.7" type="QString"/>
                   <Option name="line_width_unit" value="MM" type="QString"/>
                   <Option name="offset" value="0" type="QString"/>
                   <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
@@ -33676,7 +33676,7 @@ def my_form_open(dialog, layer, feature):
                 <prop v="round" k="joinstyle"/>
                 <prop v="255,255,255,255" k="line_color"/>
                 <prop v="solid" k="line_style"/>
-                <prop v="0.86" k="line_width"/>
+                <prop v="0.7" k="line_width"/>
                 <prop v="MM" k="line_width_unit"/>
                 <prop v="0" k="offset"/>
                 <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
