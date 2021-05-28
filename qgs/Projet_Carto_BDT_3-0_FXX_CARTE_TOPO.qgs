@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Florian Boret" saveUser="florianboret" version="3.18.3-Zürich" saveDateTime="2021-05-28T20:57:18" projectname="">
+<qgis saveUserFull="Florian Boret" saveUser="florianboret" version="3.18.3-Zürich" saveDateTime="2021-05-28T20:58:09" projectname="">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -233,10 +233,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>767456.65265355794690549</xmin>
-      <ymin>6277411.65939092729240656</ymin>
-      <xmax>775017.12141126929782331</xmax>
-      <ymax>6282776.0864797392860055</ymax>
+      <xmin>770066.79510054702404886</xmin>
+      <ymin>6279663.3942183293402195</ymin>
+      <xmax>777627.26385825837496668</xmax>
+      <ymax>6285027.82130714133381844</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -40407,8 +40407,8 @@ def my_form_open(dialog, layer, feature):
         <sizescale/>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{f05f7903-54d1-410f-b67a-82338da020dd}">
-          <rule key="{d8162e1c-f9dc-427e-870b-c38356735a92}" filter=" &quot;NATURE&quot;  =  'Lieu-dit habité' AND  (&quot;IMPORTANCE&quot; = '1' OR &quot;IMPORTANCE&quot; = '2' ) AND &quot;COMMUNE_CL_DEPART&quot;  =  'Oui'" description="Préfecture">
+        <rules key="{e4e3d1ed-4450-4cf1-b7d4-50626d7ae05f}">
+          <rule key="{4f01da05-ec29-4fdf-8116-ad63b08ae982}" filter=" &quot;NATURE&quot;  =  'Lieu-dit habité' AND  (&quot;IMPORTANCE&quot; = '1' OR &quot;IMPORTANCE&quot; = '2' ) AND &quot;COMMUNE_CL_DEPART&quot;  =  'Oui'" description="Préfecture">
             <settings calloutType="simple">
               <text-style fontKerning="1" textColor="0,0,0,255" fontFamily="Arial" fontSize="8" multilineHeight="1" isExpression="0" fontStrikeout="0" useSubstitutions="0" fontUnderline="0" allowHtml="0" capitalization="1" textOpacity="1" blendMode="0" namedStyle="Bold" fontItalic="0" previewBkgrdColor="255,255,255,255" fontSizeUnit="MM" fontLetterSpacing="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="TOPONYME" fontWeight="75" fontWordSpacing="0" textOrientation="horizontal">
                 <text-buffer bufferJoinStyle="128" bufferDraw="1" bufferNoFill="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSizeUnits="MM" bufferBlendMode="0" bufferSize="1" bufferColor="255,255,255,255" bufferOpacity="1"/>
@@ -40537,10 +40537,10 @@ def my_form_open(dialog, layer, feature):
               </callout>
             </settings>
           </rule>
-          <rule key="{64b700e6-1462-4d42-b719-acc231148638}" filter=" &quot;NATURE&quot;  =  'Lieu-dit habité' AND  (&quot;IMPORTANCE&quot; = '1' OR &quot;IMPORTANCE&quot; = '2' ) AND &quot;COMMUNE_CL_DEPART&quot;  =  'Non'" description="Commune">
+          <rule key="{8b09e965-dd49-428f-8122-7a09dd11dc11}" filter=" &quot;NATURE&quot;  =  'Lieu-dit habité' AND  (&quot;IMPORTANCE&quot; = '1' OR &quot;IMPORTANCE&quot; = '2' ) AND &quot;COMMUNE_CL_DEPART&quot;  =  'Non'" description="Commune">
             <settings calloutType="simple">
               <text-style fontKerning="1" textColor="0,0,0,255" fontFamily="Arial" fontSize="5" multilineHeight="1" isExpression="0" fontStrikeout="0" useSubstitutions="0" fontUnderline="0" allowHtml="0" capitalization="0" textOpacity="1" blendMode="0" namedStyle="Bold" fontItalic="0" previewBkgrdColor="255,255,255,255" fontSizeUnit="MM" fontLetterSpacing="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="TOPONYME" fontWeight="75" fontWordSpacing="0" textOrientation="horizontal">
-                <text-buffer bufferJoinStyle="128" bufferDraw="0" bufferNoFill="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSizeUnits="MM" bufferBlendMode="0" bufferSize="1" bufferColor="255,255,255,255" bufferOpacity="1"/>
+                <text-buffer bufferJoinStyle="128" bufferDraw="1" bufferNoFill="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSizeUnits="MM" bufferBlendMode="0" bufferSize="1" bufferColor="255,255,255,255" bufferOpacity="1"/>
                 <text-mask maskedSymbolLayers="" maskSizeUnits="MM" maskOpacity="1" maskType="0" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSize="0" maskEnabled="0" maskJoinStyle="128"/>
                 <background shapeSizeX="2" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeFillColor="255,255,255,0" shapeRadiiX="0" shapeRotationType="0" shapeBlendMode="0" shapeOffsetY="0" shapeSizeType="0" shapeSizeY="2" shapeBorderColor="204,1,255,255" shapeBorderWidth="0.80000000000000004" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeJoinStyle="64" shapeType="0" shapeRadiiUnit="MM" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetX="0" shapeDraw="0" shapeSVGFile="" shapeRadiiY="0" shapeSizeUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeRotation="0" shapeOffsetUnit="MM" shapeOpacity="1" shapeBorderWidthUnit="MM">
                   <symbol alpha="1" clip_to_extent="1" name="markerSymbol" type="marker" force_rhr="0">
@@ -40666,7 +40666,7 @@ def my_form_open(dialog, layer, feature):
               </callout>
             </settings>
           </rule>
-          <rule key="{40e604de-cacc-4f88-9acd-1c59d8572d05}" filter="ELSE">
+          <rule key="{3bc63795-6366-4484-a266-40d45a13643f}" filter="ELSE">
             <settings calloutType="simple">
               <text-style fontKerning="1" textColor="0,0,0,255" fontFamily="Arial" fontSize="2" multilineHeight="1" isExpression="0" fontStrikeout="0" useSubstitutions="0" fontUnderline="0" allowHtml="0" capitalization="0" textOpacity="1" blendMode="0" namedStyle="Normal" fontItalic="0" previewBkgrdColor="255,255,255,255" fontSizeUnit="MM" fontLetterSpacing="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fieldName="TOPONYME" fontWeight="50" fontWordSpacing="0" textOrientation="horizontal">
                 <text-buffer bufferJoinStyle="128" bufferDraw="1" bufferNoFill="0" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSizeUnits="MM" bufferBlendMode="0" bufferSize="1" bufferColor="255,255,255,255" bufferOpacity="1"/>
@@ -42148,7 +42148,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymin="6277411.65939092729240656" xmin="766223.07609319721814245" xmax="776250.69797163002658635" ymax="6282776.0864797392860055">
+    <DefaultViewExtent ymin="6279663.3942183293402195" xmin="768833.21854018629528582" xmax="778860.84041861910372972" ymax="6285027.82130714133381844">
       <spatialrefsys>
         <wkt>PROJCRS["RGF93 / Lambert-93",BASEGEOGCRS["RGF93",DATUM["Reseau Geodesique Francais 1993",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4171]],CONVERSION["Lambert-93",METHOD["Lambert Conic Conformal (2SP)",ID["EPSG",9802]],PARAMETER["Latitude of false origin",46.5,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8821]],PARAMETER["Longitude of false origin",3,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8822]],PARAMETER["Latitude of 1st standard parallel",49,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8823]],PARAMETER["Latitude of 2nd standard parallel",44,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8824]],PARAMETER["Easting at false origin",700000,LENGTHUNIT["metre",1],ID["EPSG",8826]],PARAMETER["Northing at false origin",6600000,LENGTHUNIT["metre",1],ID["EPSG",8827]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["France"],BBOX[41.15,-9.86,51.56,10.38]],ID["EPSG",2154]]</wkt>
         <proj4>+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
