@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveUser="LN" saveDateTime="2021-05-29T08:41:13" saveUserFull="LN" version="3.18.3-Zürich">
+<qgis projectname="" saveUser="LN" saveDateTime="2021-05-29T08:47:56" saveUserFull="LN" version="3.18.3-Zürich">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -233,10 +233,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>782458.38807325786910951</xmin>
-      <ymin>6289703.15767159312963486</ymin>
-      <xmax>792877.552935014013201</xmax>
-      <ymax>6295277.04656616784632206</ymax>
+      <xmin>785552.59777686139568686</xmin>
+      <ymin>6284141.50283348094671965</ymin>
+      <xmax>795328.9519535000436008</xmax>
+      <ymax>6289371.51048741582781076</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -10950,7 +10950,7 @@ def my_form_open(dialog, layer, feature):
       <renderer-v2 type="nullSymbol"/>
       <labeling type="simple">
         <settings calloutType="simple">
-          <text-style isExpression="0" blendMode="0" textOrientation="horizontal" fontSize="10" fontKerning="1" useSubstitutions="0" fontFamily="Arial" previewBkgrdColor="255,255,255,255" fontWordSpacing="0" namedStyle="Regular" fieldName="TOPONYME" fontWeight="50" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontStrikeout="0" fontSizeUnit="RenderMetersInMapUnits" fontItalic="0" fontLetterSpacing="0.5" fontUnderline="0" textColor="27,141,252,255" capitalization="0" textOpacity="1" allowHtml="0" multilineHeight="1">
+          <text-style isExpression="0" blendMode="0" textOrientation="horizontal" fontSize="10" fontKerning="1" useSubstitutions="0" fontFamily="Arial" previewBkgrdColor="255,255,255,255" fontWordSpacing="0" namedStyle="Normal" fieldName="TOPONYME" fontWeight="50" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontStrikeout="0" fontSizeUnit="RenderMetersInMapUnits" fontItalic="0" fontLetterSpacing="0.5" fontUnderline="0" textColor="27,141,252,255" capitalization="0" textOpacity="1" allowHtml="0" multilineHeight="1">
             <text-buffer bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferJoinStyle="128" bufferNoFill="1" bufferBlendMode="0" bufferColor="255,255,255,255" bufferSize="0.7" bufferSizeUnits="MM" bufferDraw="1" bufferOpacity="1"/>
             <text-mask maskSize="1.5" maskedSymbolLayers="" maskJoinStyle="128" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskEnabled="0" maskOpacity="1" maskType="0" maskSizeUnits="MM"/>
             <background shapeRadiiY="0" shapeJoinStyle="64" shapeSizeUnit="MM" shapeBorderWidthUnit="MM" shapeSizeX="0" shapeRadiiUnit="MM" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeDraw="0" shapeOffsetUnit="MM" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidth="0" shapeSVGFile="" shapeBorderColor="128,128,128,255" shapeSizeType="0" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeRadiiX="0" shapeOpacity="1" shapeRotation="0" shapeOffsetY="0" shapeRotationType="0" shapeFillColor="255,255,255,255" shapeOffsetX="0" shapeSizeY="0" shapeType="0" shapeBlendMode="0">
@@ -11035,7 +11035,7 @@ def my_form_open(dialog, layer, feature):
                 </Option>
                 <Option name="Size" type="Map">
                   <Option value="true" name="active" type="bool"/>
-                  <Option value="CASE WHEN &quot;TOPONYME&quot; LIKE '%Canal%' THEN&#xa;40&#xa; ELSE&#xa;60&#xa; END" name="expression" type="QString"/>
+                  <Option value="CASE WHEN &quot;TOPONYME&quot; LIKE '%Canal%' THEN&#xa;40&#xa; ELSE&#xa;50&#xa; END" name="expression" type="QString"/>
                   <Option value="3" name="type" type="int"/>
                 </Option>
               </Option>
@@ -21018,7 +21018,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3x:0,0,0,0,0,0" name="outline_width_map_unit_scale" type="QString"/>
                 <Option value="MM" name="outline_width_unit" type="QString"/>
                 <Option value="area" name="scale_method" type="QString"/>
-                <Option value="1" name="size" type="QString"/>
+                <Option value="0.8" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
                 <Option value="1" name="vertical_anchor_point" type="QString"/>
@@ -21037,7 +21037,7 @@ def my_form_open(dialog, layer, feature):
               <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
               <prop v="MM" k="outline_width_unit"/>
               <prop v="area" k="scale_method"/>
-              <prop v="1" k="size"/>
+              <prop v="0.8" k="size"/>
               <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
               <prop v="MM" k="size_unit"/>
               <prop v="1" k="vertical_anchor_point"/>
@@ -21074,7 +21074,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3x:0,0,0,0,0,0" name="outline_width_map_unit_scale" type="QString"/>
                 <Option value="MM" name="outline_width_unit" type="QString"/>
                 <Option value="area" name="scale_method" type="QString"/>
-                <Option value="1" name="size" type="QString"/>
+                <Option value="0.8" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
                 <Option value="1" name="vertical_anchor_point" type="QString"/>
@@ -21093,7 +21093,7 @@ def my_form_open(dialog, layer, feature):
               <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
               <prop v="MM" k="outline_width_unit"/>
               <prop v="area" k="scale_method"/>
-              <prop v="1" k="size"/>
+              <prop v="0.8" k="size"/>
               <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
               <prop v="MM" k="size_unit"/>
               <prop v="1" k="vertical_anchor_point"/>
@@ -22954,7 +22954,7 @@ def my_form_open(dialog, layer, feature):
                     <Option value="3x:0,0,0,0,0,0" name="outline_width_map_unit_scale" type="QString"/>
                     <Option value="MM" name="outline_width_unit" type="QString"/>
                     <Option value="diameter" name="scale_method" type="QString"/>
-                    <Option value="1.5" name="size" type="QString"/>
+                    <Option value="1" name="size" type="QString"/>
                     <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                     <Option value="MM" name="size_unit" type="QString"/>
                     <Option value="1" name="vertical_anchor_point" type="QString"/>
@@ -22973,7 +22973,7 @@ def my_form_open(dialog, layer, feature):
                   <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
                   <prop v="MM" k="outline_width_unit"/>
                   <prop v="diameter" k="scale_method"/>
-                  <prop v="1.5" k="size"/>
+                  <prop v="1" k="size"/>
                   <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
                   <prop v="MM" k="size_unit"/>
                   <prop v="1" k="vertical_anchor_point"/>
@@ -23038,7 +23038,7 @@ def my_form_open(dialog, layer, feature):
                     <Option value="3x:0,0,0,0,0,0" name="outline_width_map_unit_scale" type="QString"/>
                     <Option value="MM" name="outline_width_unit" type="QString"/>
                     <Option value="diameter" name="scale_method" type="QString"/>
-                    <Option value="1.5" name="size" type="QString"/>
+                    <Option value="1" name="size" type="QString"/>
                     <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                     <Option value="MM" name="size_unit" type="QString"/>
                     <Option value="1" name="vertical_anchor_point" type="QString"/>
@@ -23057,7 +23057,7 @@ def my_form_open(dialog, layer, feature):
                   <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
                   <prop v="MM" k="outline_width_unit"/>
                   <prop v="diameter" k="scale_method"/>
-                  <prop v="1.5" k="size"/>
+                  <prop v="1" k="size"/>
                   <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
                   <prop v="MM" k="size_unit"/>
                   <prop v="1" k="vertical_anchor_point"/>
@@ -23122,7 +23122,7 @@ def my_form_open(dialog, layer, feature):
                     <Option value="3x:0,0,0,0,0,0" name="outline_width_map_unit_scale" type="QString"/>
                     <Option value="MM" name="outline_width_unit" type="QString"/>
                     <Option value="diameter" name="scale_method" type="QString"/>
-                    <Option value="1.5" name="size" type="QString"/>
+                    <Option value="1" name="size" type="QString"/>
                     <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                     <Option value="MM" name="size_unit" type="QString"/>
                     <Option value="1" name="vertical_anchor_point" type="QString"/>
@@ -23141,7 +23141,7 @@ def my_form_open(dialog, layer, feature):
                   <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
                   <prop v="MM" k="outline_width_unit"/>
                   <prop v="diameter" k="scale_method"/>
-                  <prop v="1.5" k="size"/>
+                  <prop v="1" k="size"/>
                   <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
                   <prop v="MM" k="size_unit"/>
                   <prop v="1" k="vertical_anchor_point"/>
@@ -42272,7 +42272,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymax="6295460.29255308397114277" xmax="792877.552935014013201" xmin="782458.38807325786910951" ymin="6289519.91168467700481415">
+    <DefaultViewExtent ymax="6289543.45110773574560881" xmax="795328.9519535000436008" xmin="785552.59777686139568686" ymin="6283969.5622131610289216">
       <spatialrefsys>
         <wkt>PROJCRS["RGF93 / Lambert-93",BASEGEOGCRS["RGF93",DATUM["Reseau Geodesique Francais 1993",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4171]],CONVERSION["Lambert-93",METHOD["Lambert Conic Conformal (2SP)",ID["EPSG",9802]],PARAMETER["Latitude of false origin",46.5,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8821]],PARAMETER["Longitude of false origin",3,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8822]],PARAMETER["Latitude of 1st standard parallel",49,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8823]],PARAMETER["Latitude of 2nd standard parallel",44,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8824]],PARAMETER["Easting at false origin",700000,LENGTHUNIT["metre",1],ID["EPSG",8826]],PARAMETER["Northing at false origin",6600000,LENGTHUNIT["metre",1],ID["EPSG",8827]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["France"],BBOX[41.15,-9.86,51.56,10.38]],ID["EPSG",2154]]</wkt>
         <proj4>+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
