@@ -263,7 +263,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                         symbol.setColor(QColor(int(color_red),int(color_green),int(color_blue)))
                         # Set opacity
                         symbol.setOpacity(int(v_transp)/100)
-                        symbol.setWidth (Outline_width)
+                        # symbol.setWidth (Outline_width)
 
                         category = QgsRendererCategory(value, symbol, label)
                         categories.append(category)
